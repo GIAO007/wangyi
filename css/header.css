@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+ol,li{
+    list-style: none;
+}
+
+/* 头部 */
+.header{
+    width: 100%;
+    height: 176px;
+}
+
+/* 登录注册 */
+.header .box1{
+   width: 100%;
+   height: 36px;
+   background-color: #333;
+}
+.header .box1 .login{
+    width: 1090px;
+    height: 36px;
+    margin: 0 auto;
+    position: relative;
+}
+.header .box1 .login .lo_ul{
+    float: right;
+    position: relative;
+}
+.header .box1 .login .lo_ul .lo_li{
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+.header .box1 .login .lo_ul .lo_li::before{
+    content: "";
+    display: inline-block;
+    height: 16px;
+    border-right: 1px solid #5c5c5c;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(1)::before{
+    border-right:none;
+}
+.header .box1 .login .lo_ul .lo_li .lo_a{
+    color: #ccc;
+    font-size: 12px;
+    line-height: 36px;
+}
+
+.header .box1 .login .lo_ul .lo_li .lo_a:hover{
+    color: #fff;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5){
+    width: 80px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5):hover{
+    background-image: url("../img/上箭头.png");
+    background-size: 10px 5px;
+    background-repeat: no-repeat;
+    background-position: 34px 31px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5) img{
+    width: 10px;
+    height: 10px;
+    position: relative;
+    left: 5px;
+    top: 1px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5) ol{
+    width: 80px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-top: none;
+    display: none;
+ }
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5) ol::before{
+    content: "";
+    display: table;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5) ol li{
+    width: 48px;
+    margin-left: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5) ol li:last-child{
+    border-bottom: none;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5) ol li a{
+   font-size: 12px;
+   color: #aaa;
+   display: block;
+   text-align: center;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(5) ol li a:hover{
+    color: #cc9756;
+ }
+
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6){
+    width: 80px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6):hover{
+    background-image: url("../img/上箭头.png");
+    background-size: 10px 5px;
+    background-repeat: no-repeat;
+    background-position: 36px 31px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6) img{
+    width: 10px;
+    height: 10px;
+    position: relative;
+    left: 5px;
+    top: 1px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6) ol{
+    width: 80px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-top: none;
+    display: none;
+ }
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6) ol::before{
+    content: "";
+    display: table;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6) ol li{
+    width: 48px;
+    margin-left: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6) ol li:last-child{
+    border-bottom: none;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6) ol li a{
+   font-size: 12px;
+   color: #aaa;
+   display: block;
+   text-align: center;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(6) ol li a:hover{
+    color: #cc9756;
+ }
+
+.header .box1 .login .lo_ul .lo_li:nth-of-type(7) .lo_a{
+  margin-left: 13px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(7):hover{
+    background-image: url("../img/上箭头.png");
+    background-size: 10px 5px;
+    background-repeat: no-repeat;
+    background-position: 21px 31px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(7) i{
+    width: 7px;
+    position: absolute;
+    top: 13px;
+    height: 11px;
+    background-image: url("../img/icon.jpg");
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(7) .down{
+    width: 150px;
+    height: 155px;
+    position: absolute;
+    top: 36px;
+    left: -54px;
+    border: 1px solid #eee;
+    border-top: none;  
+    display: none;
+    background-color: #fff;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(7) .down img{
+    width: 120px;
+    height: 120px;
+    margin: 10px 15px 0 15px;
+}
+.header .box1 .login .lo_ul .lo_li:nth-of-type(7) .down p{
+    color: #cc9756;
+    font-size: 12px;
+    text-align: center;
+}
