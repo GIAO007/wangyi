@@ -130,7 +130,7 @@ ol,li{
     border-top: none;
     display: none;
     z-index: 99;
-    position: relative;
+    position: absolute;
  }
 .header .box1 .login .lo_ul .lo_li:nth-of-type(6) ol::before{
     content: "";
@@ -412,7 +412,6 @@ ol,li{
     width: 1350px;
     position: absolute;
     top: 30px;
-    right: auto;
     left: 100px;
     padding: 14px 20px 20px;
     background-color: #fff;
@@ -466,15 +465,3 @@ ol,li{
 }
 
 
-
-/* banner图 */
-.banner{
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-    position: absolute;
-}
-.banner img{
-    position: relative;
-    left: -13%;
-}

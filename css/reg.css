@@ -1,0 +1,69 @@
+.article{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    clear: both;
+}
+/* banner图 */
+.article .banner{
+    width: 1519px;
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.article .banner img{
+    position: relative;
+    left: -26%;
+}
+
+.reg{
+    width: 480px;
+    height: 330px;
+    border: 1px solid #ccc;
+    position: relative;
+    left: 410px;
+    top: -375px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.reg .reg_top{
+    width: 480px;
+    height: 50px;
+    background-color: #fff;
+}
+.reg .reg_top p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+.reg .reg_bot{
+    width: 480px;
+    height: 280px;
+    background-color: #cc9756;
+}
+
+.reg .reg_bot p{
+    font-size: 20px;
+    line-height: 35px;
+    margin-left: 50px;
+}
+.reg .reg_bot span{
+    display: none;
+}
+.reg .reg_bot input{
+    height: 30px;
+    width: 200px;
+ }
+.reg .reg_bot input:last-child{
+   margin-left: 35px;
+   margin-top: 30px;
+   width: 60px;
+   height: 30px;
+}
+button{
+    margin-left: 100px;
+   height: 30px;
+}

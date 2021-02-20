@@ -7,6 +7,12 @@ var li7 = document.querySelector('#li7')
 var lo_ol1 = document.querySelector('.lo_ol1')
 var lo_ol2 = document.querySelector('.lo_ol2')
 var down = document.querySelector('.down')
+var lo_a = document.querySelector('.lo_a')
+
+// 登录状态
+if(localStorage.getItem('succ') == 1){
+    lo_a.innerText = localStorage.getItem('user')
+}
 
 on(lo_ul,'mouseover','#li5',function (){
     lo_ol1.style.display = 'block'

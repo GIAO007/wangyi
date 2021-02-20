@@ -1,0 +1,346 @@
+.footer{
+    width: 100%;
+}
+.footer .footer_top{
+    width: 100%;
+    height: 204px;
+    margin-top: 60px;
+    margin-bottom: 34px;
+    box-sizing: border-box;
+}
+.footer .footer_box{
+   width: 1090px;
+   text-align: center;
+   margin: 0 auto;
+}
+.footer .footer_top .top_box1{
+    width: 362px;
+    height: 204px;
+    float: left;
+}
+.footer .footer_top .top_box1 .box1_zxkf{
+    width: 80px;
+    height: 100px;
+    font-size: 14px;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #E8E8E8;
+    float: left;
+    margin-left: 86px;
+}
+.footer .footer_top .top_box1 .box1_zxkf i{
+    width: 35px;
+    height: 30px;
+    background-image: url("../img/客服.png");
+    background-repeat: no-repeat;
+    background-size: 35px 30px;
+    margin-left: 23px;
+    margin-top: 25px;
+    float: left;
+}
+.footer .footer_top .top_box1 .box1_zxkf p{
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-left: 13px;
+    margin-top: 10px;
+}
+.footer .footer_top .top_box1 .box1_zxkf:hover i{
+    background-image: url("../img/客服1.png");
+}
+.footer .footer_top .top_box1 .box1_zxkf:hover p{
+    color: #b4a078;
+}
+
+
+.footer .footer_top .top_box1 .box1_yhfk{
+    width: 80px;
+    height: 100px;
+    font-size: 14px;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #E8E8E8;
+    float: left;
+    margin-left: 30px;
+}
+.footer .footer_top .top_box1 .box1_yhfk i{
+    width: 35px;
+    height: 30px;
+    background-image: url("../img/反馈1.png");
+    background-repeat: no-repeat;
+    background-size: 35px 30px;
+    margin-left: 23px;
+    margin-top: 25px;
+    float: left;
+}
+.footer .footer_top .top_box1 .box1_yhfk p{
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-left: 13px;
+    margin-top: 10px;
+}
+.footer .footer_top .top_box1 .box1_yhfk:hover i{
+    background-image: url("../img/反馈.png");
+}
+.footer .footer_top .top_box1 .box1_yhfk:hover p{
+    color: #b4a078;
+}
+
+
+
+.footer .footer_top .top_box2{
+    width: 362px;
+    height: 204px;
+    float: left;
+    border-left: 1px solid #ccc;
+}
+.footer .footer_top .top_box2 p{
+    text-align: left;
+    font-size: 13px;
+    line-height: 23px;
+    margin: 25px 20px 22px 30px;
+}
+
+.footer .footer_top .top_box2 .box2_list{
+    text-align: left;
+    font-size: 14px;
+    line-height: 23px;
+    margin: 25px 20px 22px 30px;
+}
+.footer .footer_top .top_box2 .box2_list span{
+    float: left;
+}
+.footer .footer_top .top_box2 .box2_list .box2_wb{
+    background-image:url("../img/微博.png");
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-top: -5px;
+    margin-left: 5px;
+}
+.footer .footer_top .top_box2 .box2_list .box2_wx{
+    background-image:url("../img/微信.png");
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-top: -5px;
+    margin-left: 15px;
+}
+
+
+
+
+
+.footer .footer_top .top_box3{
+    width: 362px;
+    height: 204px;
+    float: left;
+    border-left: 1px solid #ccc;
+}
+.footer .footer_top .top_box3 .box3_ewm{
+    width: 104px;
+    height: 104px;
+    float: left;
+    background-image: url("../img/fixe2_ewm.png");
+    background-size: 104px 104px;
+    background-repeat: no-repeat;
+    margin-left: 131px;
+}
+.footer .footer_top .top_box3 p{
+    float: left;
+    font-size: 12px;
+    color: #b4a078;
+    margin-left: 130px;
+    margin-top: 5px;
+}
+
+
+.footer .footer_top .footer_box h4{
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 28px;
+    line-height: 1;
+ }
+
+
+
+
+.footer .footer_bot{
+    width: 100%;
+    height: 268px;
+    margin: 0 auto;
+    background-color: #414141;
+}
+.footer .footer_bot::before{
+    content: "";
+    display: table;
+}
+.footer .footer_bot .bot_box1{
+    width: 100%;
+    height: 51px;
+    margin-top: 40px;
+}
+.footer .footer_bot .bot_box1 li{
+    float: left;
+}
+.footer .footer_bot .bot_box1 li div{
+    height: 50px;
+    margin-right: 125px;
+}
+.footer .footer_bot .bot_box1 li:last-child div{
+    margin-right: 0;
+}
+.footer .footer_bot .bot_box1 li:nth-child(1) div i{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-image: url("../img/footer_icon.png");
+    background-repeat:no-repeat;
+    background-position: 0px -134px;
+    background-size: 50px 500px;
+}
+.footer .footer_bot .bot_box1 li:nth-child(1) div p{
+    font-size: 18px;
+    color: #fff;
+    line-height: 50px;
+    margin-left: 70px;
+}
+
+.footer .footer_bot .bot_box1 li:nth-child(2) div i{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-image: url("../img/footer_icon.png");
+    background-repeat:no-repeat;
+    background-position: 0px -366px;
+    background-size: 50px 500px;
+}
+.footer .footer_bot .bot_box1 li:nth-child(2) div p{
+    font-size: 18px;
+    color: #fff;
+    line-height: 50px;
+    margin-left: 70px;
+}
+
+.footer .footer_bot .bot_box1 li:nth-child(3) div i{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-image: url("../img/footer_icon.png");
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    background-size: 50px 500px;
+}
+.footer .footer_bot .bot_box1 li:nth-child(3) div p{
+    font-size: 18px;
+    color: #fff;
+    line-height: 50px;
+    margin-left: 70px;
+}
+
+.footer .footer_bot .bot_box1 li:nth-child(4) div i{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-image: url("../img/footer_icon.png");
+    background-repeat:no-repeat;
+    background-position: 0px -192px;
+    background-size: 50px 500px;
+}
+.footer .footer_bot .bot_box1 li:nth-child(4) div p{
+    font-size: 18px;
+    color: #fff;
+    line-height: 50px;
+    margin-left: 70px;
+}
+
+
+.footer .bot_box2{
+    width: 1090px;
+    height: 1px;
+    margin: 27px 0;
+    border-bottom: 1px solid #4f4f4f;
+}
+
+.footer .bot_box3{
+    width: 100%;
+}
+.footer .bot_box3 .box3_1{
+    width: 100%;
+}
+.footer .bot_box3 .box3_1 a{
+    font-size: 12px;
+    color: #999;
+}
+.footer .bot_box3 .box3_1 b{
+    font-size: 12px;
+    color: #999;
+    margin: auto 13px;
+}
+
+
+.footer .bot_box3 .box3_2{
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+.footer .bot_box3 .box3_2 p{
+    float: left;
+}
+.footer .bot_box3 .box3_2 a{
+    float: left;
+    margin: auto 13px auto 0 ;
+    color: #999;
+}
+
+.footer .bot_box3 .box3_3{
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+    margin-top: 40px;
+}
+.footer .bot_box3 .box3_3 p{
+    float: left;
+}
+.footer .bot_box3 .box3_3 a{
+    float: left;
+    margin: auto 13px auto 13px;
+    color: #999;
+}
+
+.footer .bot_box3 .box3_4{
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+    margin-top: 70px;
+}
+.footer .bot_box3 .box3_4 p{
+    float: left;
+    margin: auto 50px;
+}
+.footer .bot_box3 .box3_4 a{
+    float: left;
+    color: #999;
+    margin-left: 50px;
+}
+.footer .bot_box3 .box3_4 img{
+    width: 23px;
+    height: 25px;
+    float: left;
+    margin-top: -5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.footer .bot_box3 a:hover{
+    color: #fff;
+}

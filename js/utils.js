@@ -297,3 +297,216 @@ function byClass(oClass){
   }
   return arr
 }
+
+function ajax(options){
+  // 1.创建数据交互对象（XMLHttpRequest）
+  var xhr = new XMLHttpRequest()//除了IE56其他都支持
+
+  var data = ''
+  if (typeof options.data === 'string'){
+    // 如果参数是字符串不做任何处理
+    data = options.data
+  }
+  if (Object.prototype.toString.call(options.data) === '[object Object]'){
+    // 如果参数是对象，转成参数字符串 'user=xiaocuo&pass=123456'
+    for (var key in options.data){
+      data += (key+'='+options.data[key]+'&')
+    }
+    // 'user=xiaocuo&pass=123456&'
+    data = data.substring(0,data.length-1)
+  }
+  // console.log(data)//'user=xiaocuo&pass=123456'
+
+  if (options.type.toLowerCase() === 'get') {
+    // 2.初始化请求
+    if (options.cache) {
+      xhr.open(options.type,options.url+'?'+data,true)
+    } else {
+      xhr.open(options.type,options.url+'?'+data+'&_='+Date.now(),true)
+    }
+    // 3.发送请求
+    xhr.send(null)
+  } else if (options.type.toLowerCase() === 'post'){
+    // 2.初始化请求
+    xhr.open(options.type,options.url,true)
+    // 设置请求头，模拟表单post提交数据
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+    // 3.发送请求
+    xhr.send(data)
+  } else {
+    alert('仅支持 get和post 请求方式！')
+    return //结束执行
+  }
+
+  // 4.请求响应状态
+  // xhr.readyState 属性值会从0-4发送变化
+  // 当xhr.readyState属性发生变化时，会触发onreadystatechange事件
+  xhr.onreadystatechange = function (){
+    // console.log( xhr.readyState )//2 3 4
+    if (xhr.readyState === 4) {//请求完成
+      // 响应状态码 xhr.status
+      if (xhr.status >=200 && xhr.status < 300) {// 响应就绪
+        // 可以拿到数据了
+        // xhr.responseText  接收文本字符串数据
+        // xhr.responseXML  接收xml数据
+        if (options.dataType === 'json') {
+          var json = JSON.parse(xhr.responseText)
+          options.success(json)
+        } else if (options.dataType === 'xml') {
+          options.success(xhr.responseXML)
+        } else {
+          options.success(xhr.responseText)
+        }
+      } else {
+        options.error(xhr.status)
+      }
+    }
+  }
+}
+
+function jsonp(options){
+  // 把success添加为全局方法hehe
+  window[options.jsonpCallback] = options.success
+
+  // 格式data数据
+  var data = ''
+  if (typeof options.data === 'string') {
+    data = options.data
+  }
+  if (Object.prototype.toString.call(options.data) === '[object Object]') {
+    for (var key in options.data){
+      data += (key+'='+options.data[key]+'&')
+    }
+    data = data.substring(0,data.length-1)
+  }
+
+  // 动态添加script标签
+  var oScript = document.createElement('script')
+  oScript.src = options.url+'?'+options.jsonp+'='+options.jsonpCallback+'&'+data
+  // 'http://suggestion.baidu.com/su?cb=hehe&wd='+ipt.value
+  document.body.appendChild(oScript)
+  // 数据加载完成删除 script 标签
+  oScript.onload = function (){
+    document.body.removeChild(oScript)
+  }
+}
+
+function promiseAjax(options){
+  return new Promise(function (resolve,reject){
+    // 1.创建数据交互对象（XMLHttpRequest）
+    var xhr = new XMLHttpRequest()//除了IE56其他都支持
+
+    var data = ''
+    if (typeof options.data === 'string'){
+      // 如果参数是字符串不做任何处理
+      data = options.data
+    }
+    if (Object.prototype.toString.call(options.data) === '[object Object]'){
+      // 如果参数是对象，转成参数字符串 'user=xiaocuo&pass=123456'
+      for (var key in options.data){
+        data += (key+'='+options.data[key]+'&')
+      }
+      // 'user=xiaocuo&pass=123456&'
+      data = data.substring(0,data.length-1)
+    }
+    // console.log(data)//'user=xiaocuo&pass=123456'
+
+    if (options.type.toLowerCase() === 'get') {
+      // 2.初始化请求
+      if (options.cache) {
+        xhr.open(options.type,options.url+'?'+data,true)
+      } else {
+        xhr.open(options.type,options.url+'?'+data+'&_='+Date.now(),true)
+      }
+      // 3.发送请求
+      xhr.send(null)
+    } else if (options.type.toLowerCase() === 'post'){
+      // 2.初始化请求
+      xhr.open(options.type,options.url,true)
+      // 设置请求头，模拟表单post提交数据
+      xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+      // 3.发送请求
+      xhr.send(data)
+    } else {
+      alert('仅支持 get和post 请求方式！')
+      return //结束执行
+    }
+
+    // 4.请求响应状态
+    // xhr.readyState 属性值会从0-4发送变化
+    // 当xhr.readyState属性发生变化时，会触发onreadystatechange事件
+    xhr.onreadystatechange = function (){
+      // console.log( xhr.readyState )//2 3 4
+      if (xhr.readyState === 4) {//请求完成
+        // 响应状态码 xhr.status
+        if (xhr.status >=200 && xhr.status < 300) {// 响应就绪
+          // 可以拿到数据了
+          // xhr.responseText  接收文本字符串数据
+          // xhr.responseXML  接收xml数据
+          if (options.dataType === 'json') {
+            var json = JSON.parse(xhr.responseText)
+            resolve(json)
+          } else if (options.dataType === 'xml') {
+            resolve(xhr.responseXML)
+          } else {
+            resolve(xhr.responseText)
+          }
+        } else {
+          reject(xhr.status)
+        }
+      }
+    }
+  })
+}
+
+// 获取url中的某个参数值
+function getQueryString(key){
+  var url = location.href;
+  var searchStr = url.split('?')[1];
+  var reg = new RegExp('[&]?'+key+'=([^&#]*)[&]?','i');
+  var arr = searchStr.match(reg);
+  return (RegExp.$1);
+}
+
+// 封装设置cookie
+function setCookie(options){
+  if (!options.key || !options.val) {
+    throw new Error('设置失败，缺少必须参数！')
+  }
+  // 可选参数的默认值
+  options.domain = options.domain||''
+  options.path = options.path||''
+  options.days = options.days||0
+  // 判断是否设置有效期
+  if (options.days === 0){//不设置有效期
+    document.cookie = options.key+'='+escape(options.val)+'; domain='+options.domain+'; path='+options.path
+  } else {//设置有效期
+    var d = new Date()
+    d.setDate(d.getDate()+options.days)
+    document.cookie = options.key+'='+escape(options.val)+'; domain='+options.domain+'; path='+options.path+'; expires='+d
+  }
+}
+
+// 封装获取cookie
+function getCookie(key){
+  var arr = document.cookie.split('; ')
+  // ["user1=xiaoming", "user3=xiaodong"]
+  for (var i = 0, len = arr.length; i < len; i++){
+    var arr2 = arr[i].split('=')// ["user1","xiaoming"]
+    if (arr2[0]===key) {
+      // return arr2[1]
+      return unescape(arr2[1])
+    }
+  }
+  return null//没有数据
+}
+
+// 删除cookie
+// cookie过期会被浏览器删除
+function removeCookie(key){
+  setCookie({
+    'key': key,
+    'val': '123',
+    days: -2
+  })
+}
