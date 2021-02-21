@@ -1,0 +1,147 @@
+.article{
+    width: 100%;
+}
+.article .shopcat_wrap{
+    width: 1090px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.article .shopcat_head{
+    overflow: hidden;
+    background-color: #f5f5f5;
+    width: 1060px;
+    margin: 30px auto 10px;
+    line-height: 40px;
+    padding-left: 30px;
+    border: 1px solid #ddd;
+}
+.article .shopcat_head input{
+    float: left;
+    margin-top: 15px;
+}
+.article .shopcat_head span:nth-of-type(1){
+    float: left;
+}
+.article .shopcat_head span:nth-of-type(2){
+    float: left;
+    margin-left: 150px;
+}
+.article .shopcat_head span:nth-of-type(3){
+    float: left;
+    margin-left: 260px;
+}
+.article .shopcat_head span:nth-of-type(4){
+    float: left;
+    margin-left: 135px;
+}
+.article .shopcat_head span:nth-of-type(5){
+float: left;
+margin-left: 120px;
+}
+.article .shopcat_head span:nth-of-type(6){
+float: left;
+margin-left: 70px;
+}
+.article .shopcat_list{
+margin-top: 5px;
+width: 1090px;
+margin: 0 auto;
+}
+.article .shopcat_list li{
+padding: 20px 15px;
+overflow: hidden;
+margin-bottom: 10px;
+border: 1px solid #ddd;
+}
+.article .shopcat_list li input{
+float: left;
+margin: 44px 20px 0 0;
+}
+.article .shopcat_list li img{
+float: left;
+width: 98px;
+height: 98px;
+}
+.article .shopcat_list li h3{
+float: left;
+width: 300px;
+margin: 10px 0 0 15px;
+}
+.article .shopcat_list li p{
+float: left;
+width: 100px;
+text-align: center;
+line-height: 90px;
+margin-left: 58px;
+}
+.article .shopcat_list li span:nth-of-type(1){
+float: left;
+margin-left: 85px;
+padding: 0 6px;
+background-color: #eee;
+cursor: pointer;
+margin-top: 35px;
+}
+.article .shopcat_list li span:nth-of-type(3){
+float: left;
+padding: 0 3px;
+margin-left: 5px;
+background-color: #eee;
+cursor: pointer;
+margin-top: 35px;
+}
+.article .shopcat_list li span:nth-of-type(2){
+float: left;
+width: 20px;
+text-align: center;
+margin-top: 35px;
+}
+.article .shopcat_list li span:nth-of-type(4){
+float: left;
+width: 20px;
+text-align: center;
+margin-left: 90px;
+line-height: 90px;
+}
+.article .shopcat_list li em{
+float: left;
+width: 50px;
+text-align: center;
+margin-left: 80px;
+cursor: pointer;
+line-height: 90px;
+}
+.article .shopcat_list li .sum{
+color: #d4282d;
+}
+.article .shopcat_priAll{
+    width: 1090px;
+    height: 70px;
+    line-height: 70px;
+    float: left;
+    margin: 20px 0 50px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.article .shopcat_priAll span{
+    float: right;
+    font-size: 16px;
+    color: red;
+    margin-right: 150px;
+}
+.article .shopcat_priAll p{
+    float: right;
+    font-size: 16px;
+    color: #fff;
+    width: 140px;
+    background-color: #b4a078;
+    cursor: pointer;
+}
+.article .shopcat_priAll h4{
+float: right;
+font-size: 16px;
+color: red;
+}

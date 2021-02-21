@@ -52,3 +52,18 @@ for(var i = 1; i < 9; i++){
         this.children[1].style.display = 'none'
     }
 }
+
+
+
+// 购物车数量
+var shop1_i2 = document.querySelector(".shop1_i2")
+shop1_i2.innerText = Number(localStorage.getItem('shopnum'))
+
+var shop = document.querySelector(".shop")
+shop.onclick = function (){
+    if(!localStorage.getItem("succ")){
+        location.href = 'login.html'
+    }else{
+        location.href = 'shopcat.html'
+    }
+}

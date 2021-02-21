@@ -167,6 +167,7 @@
     border-top: 1px solid #ccc;
     margin-left: 4px;
     cursor: pointer;
+    display: none;
 }
 .article .fixe2 .fixe2_hdb i{
     width: 32px;
