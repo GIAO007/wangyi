@@ -1,11 +1,13 @@
 // 商品详情
 var details = document.querySelector(".details")
+let item
+
 ajax({
   url:'data/shopdetails.json',
         type:'get',
         dataType:'json',
         success:function (obj){
-          let item = {}
+          item = {}
           let id = localStorage.getItem('tmpGoodsId')
 
           obj.forEach(i => {
@@ -22,9 +24,12 @@ ajax({
               </a>
           </span>
           <span>></span>
+          <a href="shoplist.html">
           <span>全部商品</span>
+          </a>
           <span>></span>
-          <span>${item.imgname}</span>
+          <span>${item.imgname}</span> 
+            
        </div>
 
        <div class="details_bot">
@@ -231,6 +236,21 @@ details_shopcat.onclick = function (){
         localStorage.setItem('shopnum',Number(localStorage.getItem('shopnum')) + Number(shopNum))
 
         shop1_i2.innerText = localStorage.getItem('shopnum')
+
+        if (!item) return ;
+        var cnt = parseInt(document.querySelector(".details_nums").innerText)
+
+        if (isNaN(cnt) || cnt <= 0) return ;
+        if (!localStorage.getItem('shopcar')) {
+            localStorage.setItem('shopcar', '[]')
+        }
+        
+        item.count = cnt
+        let shopcar = JSON.parse(localStorage.getItem('shopcar'))
+
+        if (!shopcar) shopcar = []
+        shopcar.push(item)
+        localStorage.setItem('shopcar', JSON.stringify(shopcar))
     }
 }
         }

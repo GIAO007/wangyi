@@ -5,28 +5,61 @@ ajax({
     type:'get',
     dataType:'json',
     success:function (obj){
-        let item = {}
-          let id = localStorage.getItem('tmpGoodsId')
+        let shopcar = JSON.parse(localStorage.getItem('shopcar'))
+        
+        if (!shopcar) shopcar = []
 
-          obj.forEach(i => {
-            if (i.id === id) {
-              item = i
-            }
-          })
-
-          shopcat_list.innerHTML = `
-          <li>
-                <input type="checkbox" class="check1">
-                <img src="${item.imgurl}" alt="">
-                <h3>${item.imgname}</h3>
-                <p class="pri">${item.price}</p>
-                <span class="reduce">-</span>
-                <span class="number">1</span>
-                <span class="add">+</span>
-                <span class="sum">${item.price}</span>
-                <em>删除</em>
-            </li>
+        for (let item of shopcar) {
+          let li = document.createElement('li')
+          li.innerHTML = `
+          <input type="checkbox" class="check1">
+          <img src="${item.imgurl}" alt="">
+          <h3>${item.imgname}</h3>
+          <p class="pri">${item.price}</p>
+          <span class="reduce">-</span>
+          <span class="number">${item.count}</span>
+          <span class="add">+</span>
+          <span class="sum">${item.price*item.count}</span>
+          <em>删除</em>
           `
+
+          shopcat_list.appendChild(li)
+        }
+    // 删除
+    $('.shopcat_list').on('click','em',function (){
+      let index = $(this).parents('li').eq(0).index()
+
+      let nums = shopcar[index].count
+      localStorage.setItem('shopnum', localStorage.getItem('shopnum') - nums)
+      $('.shop1_i2').text(localStorage.getItem('shopnum'))
+
+      shopcar.splice(index, 1)
+      $(this).parents('li').eq(0).remove()
+
+      localStorage.setItem('shopcar', JSON.stringify(shopcar))
+    })
+
+    // 增加商品数量
+    
+    $('.shopcat_list').on('click','.add',function (){
+      let indexs = $(this).parents('li').eq(0).index()
+      let nums1 = shopcar[indexs].count++
+      $(".number")[indexs].innerText = nums1
+      $(".sum")[indexs].innerText = $(".pri")[indexs].innerText*nums1
+    })
+
+
+    // 减少商品数量
+    $('.shopcat_list').on('click','.reduce',function (){
+      let indexs1 = $(this).parents('li').eq(0).index()
+      let nums2 = shopcar[indexs1].count--
+      if(shopcar[indexs1].count <= 0){
+        shopcar[indexs1].count = 0
+      }
+      $(".number")[indexs1].innerText = nums2
+      $(".sum")[indexs1].innerText = $(".pri")[indexs1].innerText*nums2
+    })
+    
 
           // 全选按钮
     $('.shopcat_head').on('click','.check',function (){
@@ -56,6 +89,7 @@ ajax({
         })
         priAll()
     })
+
 
     // 计算总价
     function priAll(){
