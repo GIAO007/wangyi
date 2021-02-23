@@ -46,18 +46,26 @@ ajax({
       let nums1 = ++shopcar[indexs].count
       $(".number")[indexs].innerText = nums1
       $(".sum")[indexs].innerText = $(".pri")[indexs].innerText*nums1
+      localStorage.setItem('shopnum', parseInt(localStorage.getItem('shopnum')) + 1)
+      $('.shop1_i2').text(localStorage.getItem('shopnum'))
     })
 
 
     // 减少商品数量
     $('.shopcat_list').on('click','.reduce',function (){
       let indexs1 = $(this).parents('li').eq(0).index()
-      let nums2 = shopcar[indexs1].count--
-      if(shopcar[indexs1].count <= 0){
+      let nums2 = --shopcar[indexs1].count
+      if(shopcar[indexs1].count < 0){
         shopcar[indexs1].count = 0
+        nums2 = 0
+        localStorage.setItem('shopnum', parseInt(localStorage.getItem('shopnum')))
+      }else{
+        localStorage.setItem('shopnum', parseInt(localStorage.getItem('shopnum')) - 1)
       }
       $(".number")[indexs1].innerText = nums2
       $(".sum")[indexs1].innerText = $(".pri")[indexs1].innerText*nums2
+      
+      $('.shop1_i2').text(localStorage.getItem('shopnum'))
     })
     
 
