@@ -43,7 +43,7 @@ ajax({
     
     $('.shopcat_list').on('click','.add',function (){
       let indexs = $(this).parents('li').eq(0).index()
-      let nums1 = shopcar[indexs].count++
+      let nums1 = ++shopcar[indexs].count
       $(".number")[indexs].innerText = nums1
       $(".sum")[indexs].innerText = $(".pri")[indexs].innerText*nums1
     })
