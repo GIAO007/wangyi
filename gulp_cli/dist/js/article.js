@@ -119,11 +119,11 @@ function imgNext(){
 // 上一张图片
 function imgPrev(){
     imgIndex--
-    if(imgIndex <= 0){
-        newpl_imgs.scrollLeft = Imgwidths*newpl_img2.length
-        imgIndex = newpl_img2.length-1
+    if(imgIndex <0){
+        newpl_imgs.scrollLeft = Imgwidths*(newpl_img2.length-1)
+        imgIndex = newpl_img2.length-2
     }
-    animate(newpl_imgs,{scrollLeft:Imgwidths*(imgIndex-1)})
+    animate(newpl_imgs,{scrollLeft:Imgwidths*imgIndex})
 
 }
 
