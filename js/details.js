@@ -212,8 +212,8 @@ var shopNum = details_nums.innerText
 
 details_reduce.onclick = function (){
     shopNum--
-    if(shopNum<0){
-        shopNum = 0
+    if(shopNum<1){
+        shopNum = 1
     }
     details_nums.innerText = shopNum
 }
@@ -224,9 +224,6 @@ details_add.onclick = function (){
 }
 
 details_shopcat.onclick = function (){
-    if(shopNum<1){
-        alert("请选择商品数量")
-    }
     
     if(!localStorage.getItem('succ')){
         alert("用户未登录，请先登录")
